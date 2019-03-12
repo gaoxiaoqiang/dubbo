@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tst.project.dao.StudentDao">
+	<select id="getStudents" parameterType="studentBean" resultType="studentBean">
+	select * from tst_student
+	where 1=1 
+	<if test="student_id!=null and student_id!=''">
+	and student_id=#{student_id}
+	</if>
+	</select>
+	  
+	  
+	<select id="getStudentDetail" parameterType="studentBean" resultType="studentBean">
+	select * from tst_student
+	where 1=1 
+	<if test="student_id!=null and student_id!=''">
+	and student_id=#{student_id}
+	</if>
+	</select>
+</mapper>
